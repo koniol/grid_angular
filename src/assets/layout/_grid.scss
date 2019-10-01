@@ -1,0 +1,58 @@
+$grid-width: 114rem;
+$gap: 4rem;
+$margin-bottom: 4rem;
+
+.grid-layout {
+  max-width: $grid-width;
+  margin: 0 auto;
+  background: #00BCD4;
+  font-size: 1rem;
+}
+
+
+[class^="col-"] {
+  float: left;
+  background: #7bff75;
+  height: 20px;
+  border: 1px solid red;
+  &:not(:last-child){
+    margin-right: $gap;
+  }
+
+}
+
+.row{
+  width: 100%;
+  margin-bottom: $margin-bottom;
+
+  .col-1-of-4{
+    width: calc((100% - 3 * #{$gap}) / 4);
+  }
+
+  .col-2-of-4{
+    width: calc((100% - #{$gap}) / 2);
+  }
+
+  .col-3-of-4{
+    width: calc(((100% - #{$gap}) / 2) + ((100% - 3 * #{$gap}) / 4) + #{$gap}) ;
+  }
+
+  .col-4-of-4{
+    width: 100%;
+  }
+
+  .col-1-of-3{
+    width: calc((100% - 2 * #{$gap}) / 3);
+  }
+
+  .col-2-of-3{
+    width: calc(((100% - 2 * #{$gap}) / 3) * 2 + #{$gap});
+  }
+
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
